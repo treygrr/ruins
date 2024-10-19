@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://1ng2vfcm11vv"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_gfcmc"]
+[ext_resource type="PackedScene" uid="uid://djucypf1rac78" path="res://Player/CameraController.tscn" id="2_4n3ra"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_06lvs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jxbfa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7uie"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_gfcmc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_06lvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_jxbfa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.695, 0, 0, 0, 0.325, 0, 0, 0, 1.035, 0, 0.426074, -0.421393)
+mesh = SubResource("BoxMesh_h7uie")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CameraController" parent="." instance=ExtResource("2_4n3ra")]
