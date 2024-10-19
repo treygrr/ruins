@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://1ng2vfcm11vv"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_gfcmc"]
-[ext_resource type="PackedScene" uid="uid://djucypf1rac78" path="res://Player/CameraController.tscn" id="2_4n3ra"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_gfcmc"]
+[ext_resource type="PackedScene" uid="uid://djucypf1rac78" path="res://player/camera_controller.tscn" id="2_4n3ra"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_06lvs"]
 
