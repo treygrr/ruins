@@ -1,19 +1,31 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var navigation_agent := $NavigationAgent3D
 @onready var camera := $CameraController/SpringArm3D/Camera3D
+@onready var animation_tree: AnimationTree = %AnimationTree
+@onready var skeleton: Skeleton3D = %GeneralSkeleton
 
 @export_range(0, 1000) var speed: int = 500
 @export_range(0, 100) var turn_speed: int = 100
 
+var walking = false
+var idle = true
+
 func _ready():
 	pass
-	
+
 func _process(delta: float):
 	# if we are desitination stop
 	if (navigation_agent.is_navigation_finished()):
+		animation_tree.set("parameters/conditions/Moving", false)
+		animation_tree.set("parameters/conditions/Idle", true)
+		print_debug("moving", animation_tree.get("parameters/conditions/Moving"))
+		print_debug("idle", animation_tree.get("parameters/conditions/Idle"))
 		return
 	move_player(delta)
+	animation_tree.set("parameters/conditions/Moving", true)
+	animation_tree.set("parameters/conditions/Idle", false)
 	pass
 	
 func _input(event):
@@ -35,8 +47,6 @@ func _input(event):
 		var result = space_state.intersect_ray(query)
 		
 		if (result):
-			print_debug(result.position)
-			navigation_agent.debug_enabled
 			navigation_agent.set_target_position(result.position)
 			
 func move_player(delta:float):
@@ -46,7 +56,6 @@ func move_player(delta:float):
 	velocity = direction * speed * delta
 	face_direction(target_position, delta)
 	move_and_slide()
-
 func face_direction(direction: Vector3, delta: float):
 	# calculate the target direction, keeping the Y component unchanged
 	var target_direction = Vector3(direction.x, global_position.y, direction.z)

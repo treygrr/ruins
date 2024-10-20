@@ -26,13 +26,13 @@ var camera_timout_duration = 3.0
 # camera distance allowance
 @export_category("Distance")
 @export_range(0.0, 100.0)
-var camera_max_distance = 30.0
+var camera_max_distance = 20.0
 @export_range(5.0, 100.0)
 var camera_min_distance = 5.0
 
 @export_range(5.0, 100)
-var camera_distance = 20.0
-var camera_distance_soft_lock = 20.0
+var camera_distance = 10.0
+var camera_distance_soft_lock = 10.0
 
 var moving_camera = false
 

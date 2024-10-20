@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ruins of Scape"
-run/main_scene="res://levels/level.tscn"
+run/main_scene="res://Levels/level.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 

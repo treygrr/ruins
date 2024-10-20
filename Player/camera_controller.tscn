@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://djucypf1rac78"]
 
-[ext_resource type="Script" path="res://player/camera_controller.gd" id="1_8y3q3"]
+[ext_resource type="Script" path="res://Player/camera_controller.gd" id="1_8y3q3"]
 
 [node name="CameraController" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 0.492247, 0)

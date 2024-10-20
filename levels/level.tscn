@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://w6xuq35mbux0"]
 
-[ext_resource type="PackedScene" uid="uid://1ng2vfcm11vv" path="res://player/player.tscn" id="1_h6868"]
+[ext_resource type="PackedScene" uid="uid://1ng2vfcm11vv" path="res://Player/player.tscn" id="1_kowie"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3x7m"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,8 +16,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ja3sg"]
-vertices = PackedVector3Array(-31.5, 0.5, -31.5, -31.5, 0.5, 31.5, 31.5, 0.5, 31.5, 31.5, 0.5, -31.5)
+vertices = PackedVector3Array(-31.5, 0.02, -31.5, -31.5, 0.02, 31.5, 31.5, 0.02, 31.5, 31.5, 0.02, -31.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.01
 
 [node name="Level" type="Node3D"]
 
@@ -35,5 +36,4 @@ navigation_mesh = SubResource("NavigationMesh_ja3sg")
 transform = Transform3D(64, 0, 0, 0, 1, 0, 0, 0, 64, 0, -0.5, 0)
 use_collision = true
 
-[node name="Player" parent="." instance=ExtResource("1_h6868")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="Player" parent="." instance=ExtResource("1_kowie")]
