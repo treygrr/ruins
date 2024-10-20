@@ -1,6 +1,7 @@
 extends Node3D
 
 @export_range(0.0, 90.0)
+@export_category("Rotation")
 var camera_rotation_horizontal = 45.0
  
 @export_range(-70.0, 0.0)
@@ -14,6 +15,8 @@ var camera_min_vertical = 0.0
 
 # setting?
 @export_range(0, 1000)
+
+
 var camera_soft_lock_move_speed = 500
 
 var camera_rotation_vertical_soft_lock = -65.0  
@@ -21,9 +24,13 @@ var camera_rotation_horizontal_soft_lock = 45.0
 var camera_timout_duration = 3.0
 
 # camera distance allowance
+@export_category("Distance")
+@export_range(0.0, 100.0)
 var camera_max_distance = 30.0
+@export_range(5.0, 100.0)
 var camera_min_distance = 5.0
 
+@export_range(5.0, 100)
 var camera_distance = 20.0
 var camera_distance_soft_lock = 20.0
 
